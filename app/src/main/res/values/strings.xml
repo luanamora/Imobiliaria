@@ -16,4 +16,13 @@
     <string name="title_activity_corretor">CorretorActivity</string>
     <string name="title_activity_locatario">LocatarioActivity</string>
     <string name="title_activity_imovel">ImovelActivity</string>
+    <string name="btSalvar">Salvar</string>
+    <string name="btCancelar">Cancelar</string>
+    <string name="etDescricao">Descrição</string>
+    <string name="etTamanho">Tamanho</string>
+    <string name="etVVenda">Valor de Venda</string>
+    <string name="etVAluguel">Valor de Aluguel</string>
+    <string name="etLocatario">Locatario</string>
+    <string name="etCorretor">Corretor</string>
+
 </resources>
