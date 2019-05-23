@@ -9,11 +9,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".ImovelActivity"
+            android:label="@string/title_activity_imovel"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".LocatarioActivity"
+            android:label="@string/title_activity_locatario"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CorretorActivity"
+            android:label="@string/title_activity_corretor"
+            android:theme="@style/AppTheme.NoActionBar" />
 
-        <meta-data android:name="DATABASE" android:value="imobiliariadb" />
-        <meta-data android:name="VERSION" android:value="1" />
-        <meta-data android:name="QUERY_LOG" android:value="true" />
-        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="com.android.projetoimobiliaria" />
+        <meta-data
+            android:name="DATABASE"
+            android:value="imobiliariadb" />
+        <meta-data
+            android:name="VERSION"
+            android:value="1" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="com.android.projetoimobiliaria" />
 
         <activity
             android:name=".MainActivity"
