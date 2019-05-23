@@ -6,4 +6,95 @@ import com.orm.dsl.Unique;
 public class Imovel extends SugarRecord {
     @Unique
     private int codigo;
+    private String descricao;
+    private Endereco endereco;
+    private Double tamanho;
+    private Double valorVenda;
+    private Double valorAluguel;
+    private Locatario locatario;
+    private Corretor corretor;
+
+    public Imovel() {
+    }
+
+    public Imovel(int codigo, String descricao, Endereco endereco, Double tamanho,
+                  Double valorVenda, Double valorAluguel, Locatario locatario, Corretor corretor) {
+        this.codigo = codigo;
+        this.descricao = descricao;
+        this.endereco = endereco;
+        this.tamanho = tamanho;
+        this.valorVenda = valorVenda;
+        this.valorAluguel = valorAluguel;
+        this.locatario = locatario;
+        this.corretor = corretor;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public Double getTamanho() {
+        return tamanho;
+    }
+
+    public void setTamanho(Double tamanho) {
+        this.tamanho = tamanho;
+    }
+
+    public Double getValorVenda() {
+        return valorVenda;
+    }
+
+    public void setValorVenda(Double valorVenda) {
+        this.valorVenda = valorVenda;
+    }
+
+    public Double getValorAluguel() {
+        return valorAluguel;
+    }
+
+    public void setValorAluguel(Double valorAluguel) {
+        this.valorAluguel = valorAluguel;
+    }
+
+    public Locatario getLocatario() {
+        return locatario;
+    }
+
+    public void setLocatario(Locatario locatario) {
+        this.locatario = locatario;
+    }
+
+    public Corretor getCorretor() {
+        return corretor;
+    }
+
+    public void setCorretor(Corretor corretor) {
+        this.corretor = corretor;
+    }
+
+    @Override
+    public String toString() {
+        return "Imovel{}";
+    }
 }
