@@ -45,7 +45,7 @@
         android:layout_marginRight="@dimen/fab_margin"/>
 
     <EditText
-        android:id="@+id/etTamanho"
+        android:id="@+id/etTelefone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/etTelefone"
@@ -55,7 +55,7 @@
 
 
     <EditText
-        android:id="@+id/etVVenda"
+        android:id="@+id/etCreci"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/etCreci"
@@ -88,7 +88,7 @@
             android:layout_marginRight="@dimen/fab_margin"
             android:layout_marginTop="@dimen/fab_margin"
             android:layout_weight="1"
-            android:background="@drawable/borda_arredondada"
+            android:background="@drawable/botao"
             android:textColorHint="@color/colorWhite"
             android:textStyle="bold"
 
@@ -104,7 +104,7 @@
             android:layout_marginRight="@dimen/fab_margin"
             android:layout_marginTop="@dimen/fab_margin"
             android:layout_weight="1"
-            android:background="@drawable/borda_arredondada"
+            android:background="@drawable/botao"
             android:textColorHint="@color/colorWhite"
             android:textStyle="bold"
             />

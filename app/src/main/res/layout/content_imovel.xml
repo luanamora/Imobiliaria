@@ -122,8 +122,8 @@
             android:layout_marginRight="@dimen/fab_margin"
             android:layout_marginTop="@dimen/fab_margin"
             android:layout_weight="1"
-            android:background="@drawable/borda_arredondada"
-            android:textColor="@color/colorWhite"
+            android:background="@drawable/botao"
+            android:textColorHint="@color/colorWhite"
             android:textStyle="bold"
 
 
@@ -138,8 +138,8 @@
             android:layout_marginRight="@dimen/fab_margin"
             android:layout_marginTop="@dimen/fab_margin"
             android:layout_weight="1"
-            android:background="@drawable/borda_arredondada"
-            android:textColor="@color/colorWhite"
+            android:background="@drawable/botao"
+            android:textColorHint="@color/colorWhite"
             android:textStyle="bold
 "
             />

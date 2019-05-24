@@ -28,6 +28,7 @@
     <string name="btEndereco">Cadastro de Endereço</string>
     <string name="etCodigo">Código</string>
     <string name="tvCorretor">Cadastro de Corretor</string>
+    <string name="tvLocatario">Cadastro de Locatário</string>
     <string name="etNome">Nome</string>
     <string name="etTelefone">Telefone</string>
     <string name="etCreci">CRECI</string>

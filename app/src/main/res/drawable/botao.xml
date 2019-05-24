@@ -1,5 +1,62 @@
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/botao_selecionado" android:state_pressed="true" /> <!-- pressionado -->
-    <item android:drawable="@drawable/botao_selecionado" android:state_focused="true" /> <!-- com foco -->
-    <item android:drawable="@drawable/botao_normal" /> <!-- normal-->
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+        <item android:state_pressed="true">
+                <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle" >
+                        <corners
+                            android:radius="11dp"
+                            />
+                        <gradient
+                            android:angle="270"
+                            android:centerX="0%"
+                            android:centerColor="#CB194466"
+                            android:startColor="#E8E8E8"
+                            android:endColor="#B90A3258"
+                            android:type="linear"
+                            />
+                        <padding
+                            android:left="0dp"
+                            android:top="0dp"
+                            android:right="0dp"
+                            android:bottom="0dp"
+                            />
+                        <size
+                            android:width="250dp"
+                            android:height="49dp"
+                            />
+                        <stroke
+                            android:width="1dp"
+                            android:color="#333333"
+                            />
+                </shape>
+
+        </item>
+        <item android:state_pressed="false">
+                <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle" >
+                        <corners
+                            android:radius="11dp"
+                            />
+                        <gradient
+                            android:angle="270"
+                            android:centerX="0%"
+                            android:centerColor="#CB021E35"
+                            android:startColor="#E8E8E8"
+                            android:endColor="#CB0A3258"
+                            android:type="linear"
+                            />
+                        <padding
+                            android:left="0dp"
+                            android:top="0dp"
+                            android:right="0dp"
+                            android:bottom="0dp"
+                            />
+                        <size
+                            android:width="250dp"
+                            android:height="49dp"
+                            />
+                        <stroke
+                            android:width="1dp"
+                            android:color="#333333"
+                            />
+                </shape>
+        </item>
 </selector>
