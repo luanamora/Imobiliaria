@@ -25,5 +25,7 @@
     <string name="etLocatario">Locatario</string>
     <string name="etCorretor">Corretor</string>
     <string name="tvImovel">Cadastro de Imóvel</string>
+    <string name="btEndereco">Cadastro de Endereço</string>
+    <string name="etCodigo">Código</string>
 
 </resources>
