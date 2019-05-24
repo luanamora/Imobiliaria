@@ -16,22 +16,22 @@
     <string name="title_activity_corretor">CorretorActivity</string>
     <string name="title_activity_locatario">LocatarioActivity</string>
     <string name="title_activity_imovel">ImovelActivity</string>
-    <string name="btSalvar">Salvar</string>
-    <string name="btCancelar">Cancelar</string>
-    <string name="etDescricao">Descrição</string>
-    <string name="etTamanho">Tamanho</string>
-    <string name="etVVenda">Valor de Venda</string>
-    <string name="etVAluguel">Valor de Aluguel</string>
-    <string name="etLocatario">Locatario</string>
-    <string name="etCorretor">Corretor</string>
-    <string name="tvImovel">Cadastro de Imóvel</string>
-    <string name="btEndereco">Cadastro de Endereço</string>
-    <string name="etCodigo">Código</string>
-    <string name="tvCorretor">Cadastro de Corretor</string>
-    <string name="tvLocatario">Cadastro de Locatário</string>
-    <string name="etNome">Nome</string>
-    <string name="etTelefone">Telefone</string>
-    <string name="etCreci">CRECI</string>
+    <string name="lbSalvar">Salvar</string>
+    <string name="lbCancelar">Cancelar</string>
+    <string name="lbDescricao">Descrição</string>
+    <string name="lbTamanho">Tamanho</string>
+    <string name="lbVVenda">Valor de Venda</string>
+    <string name="lbVAluguel">Valor de Aluguel</string>
+    <string name="lbLocatario">Locatario</string>
+    <string name="lbCorretor">Corretor</string>
+    <string name="lbImovel">Cadastro de Imóvel</string>
+    <string name="lbEndereco">Cadastro de Endereço</string>
+    <string name="lbCodigo">Código</string>
+    <string name="lbCadCorretor">Cadastro de Corretor</string>
+    <string name="lbCadLocatario">Cadastro de Locatário</string>
+    <string name="lbNome">Nome</string>
+    <string name="lbTelefone">Telefone</string>
+    <string name="lbCreci">CRECI</string>
 
 
 </resources>
