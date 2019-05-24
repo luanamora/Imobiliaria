@@ -24,8 +24,7 @@ public class ImovelActivity extends AppCompatActivity {
         setContentView(R.layout.activity_imovel);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        spCorretor.setPrompt("Corretor");
-        spLocatario.setPrompt("Locatario");
+        loadComponents();
     }
 
     private void loadComponents(){
@@ -37,10 +36,6 @@ public class ImovelActivity extends AppCompatActivity {
         btEndereco = findViewById(R.id.btEndereco);
         btSalvar = findViewById(R.id.btSalvar);
         btCancelar = findViewById(R.id.btCancelar);
-    }
-
-    private void loadSpinner(){
-
     }
 
 }
