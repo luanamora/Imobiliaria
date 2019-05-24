@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
+import com.android.projetoimobiliaria.model.Locatario;
 import com.orm.SugarContext;
 
 public class MainActivity extends AppCompatActivity
@@ -80,9 +81,13 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(MainActivity.this, ImovelActivity.class);
             startActivity(intent);
 
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_corretor) {
+            Intent intent = new Intent(MainActivity.this, CorretorActivity.class);
+            startActivity(intent);
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_locatario) {
+            Intent intent = new Intent(MainActivity.this, LocatarioActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_tools) {
 
