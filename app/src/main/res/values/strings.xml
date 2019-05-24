@@ -24,5 +24,6 @@
     <string name="etVAluguel">Valor de Aluguel</string>
     <string name="etLocatario">Locatario</string>
     <string name="etCorretor">Corretor</string>
+    <string name="tvImovel">Cadastro de Imóvel</string>
 
 </resources>
