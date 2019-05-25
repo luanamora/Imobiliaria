@@ -12,7 +12,7 @@
     <string name="menu_locatario">Locatarios</string>
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
+    <string name="menu_remove">Restaurar APP</string>
     <string name="title_activity_corretor">CorretorActivity</string>
     <string name="title_activity_locatario">LocatarioActivity</string>
     <string name="title_activity_imovel">ImovelActivity</string>

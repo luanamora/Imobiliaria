@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_remove) {
             final AlertDialog.Builder alertConfirmacao = new AlertDialog.Builder(MainActivity.this);
             alertConfirmacao.setTitle("Confirmação de Exclusão");
             alertConfirmacao.setMessage("Deseja realmente excluir TODOS os registros do SUGARSQL?");
@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity
                     enderecoList.removeAll(enderecoList);
                     imovelList.removeAll(imovelList);
                     locatarioList.removeAll(locatarioList);
-                    Mensagem.ExibirMensagem(MainActivity.this, "Bando de dados limpo com sucesso!", TipoMensagem.SUCESSO);
+                    Mensagem.ExibirMensagem(MainActivity.this, "Banco de dados limpo com sucesso!", TipoMensagem.SUCESSO);
                 }
             });
             alertConfirmacao.setNegativeButton("Não", new DialogInterface.OnClickListener() {
