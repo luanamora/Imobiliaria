@@ -16,7 +16,11 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.Adapter;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 
+import com.android.projetoimobiliaria.adapter.ImovelAdapter;
 import com.android.projetoimobiliaria.model.Corretor;
 import com.android.projetoimobiliaria.model.Endereco;
 import com.android.projetoimobiliaria.model.Imovel;
@@ -30,6 +34,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private ImovelAdapter imovelAdapter;
+    private ListView lvImovel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +44,12 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         SugarContext.init(this);
+
+        lvImovel = findViewById(R.id.lvImovel);
+
+        List<Imovel> imovels = Imovel.listAll(Imovel.class, "codigo desc");
+        imovelAdapter = new ImovelAdapter(MainActivity.this, imovels);
+        lvImovel.setAdapter(imovelAdapter);
 
 
 

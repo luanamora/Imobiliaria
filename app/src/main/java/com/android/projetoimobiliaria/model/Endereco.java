@@ -76,4 +76,8 @@ public class Endereco extends SugarRecord {
     public String toString() {
         return "Endereco{}";
     }
+    public String toStringAdapter()
+    {
+        return estado + " - " + cidade + " - " + cep;
+    }
 }
