@@ -12,10 +12,14 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.android.projetoimobiliaria.model.Corretor;
+import com.android.projetoimobiliaria.model.Imovel;
+import com.android.projetoimobiliaria.model.Locatario;
+
 public class ImovelActivity extends AppCompatActivity {
 
     private TextView tvLabelImovel;
-    private EditText etCodigo, etDescricao, etTamanho;
+    private EditText etCodigo, etDescricao, etTamanho, etVAluguel;
     private Spinner spCorretor, spLocatario;
     private Button btEndereco, btSalvar, btCancelar;
 
@@ -38,9 +42,27 @@ public class ImovelActivity extends AppCompatActivity {
         btEndereco = findViewById(R.id.btEndereco);
         btSalvar = findViewById(R.id.btSalvar);
         btCancelar = findViewById(R.id.btCancelar);
+        etVAluguel = findViewById(R.id.etVAluguel);
     }
 
     private void loadEvents(){
+        btSalvar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //String recuperaSpinner = spOperacao.getSelectedItem().toString();
+
+                Imovel imovel = new Imovel();
+                imovel.setCodigo(Integer.parseInt(etCodigo.getText().toString()));
+                imovel.setDescricao(etDescricao.getText().toString());
+                imovel.setTamanho(Double.parseDouble(etTamanho.getText().toString()));
+                imovel.setCorretor((Corretor) spCorretor.getSelectedItem());  //Provavel que essa linhda não funcionará, revisar mais tarde
+                imovel.setLocatario((Locatario) spLocatario.getSelectedItem()); //Provavel que essa linhda não funcionará, revisar mais tarde
+                imovel.setValorAluguel(Double.parseDouble(etVAluguel.getText().toString()));
+
+            }
+        });
+
         btEndereco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
