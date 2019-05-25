@@ -1,5 +1,6 @@
 package com.android.projetoimobiliaria;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -25,6 +26,7 @@ public class ImovelActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         loadComponents();
+        loadEvents();
     }
 
     private void loadComponents(){
@@ -36,6 +38,16 @@ public class ImovelActivity extends AppCompatActivity {
         btEndereco = findViewById(R.id.btEndereco);
         btSalvar = findViewById(R.id.btSalvar);
         btCancelar = findViewById(R.id.btCancelar);
+    }
+
+    private void loadEvents(){
+        btEndereco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ImovelActivity.this, EnderecoActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }
