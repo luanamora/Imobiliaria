@@ -14,14 +14,14 @@
         android:id="@+id/tvLabelCorretor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/lbCadCorretor"
+        android:layout_margin="@dimen/text_size"
         android:background="@drawable/borda_arredondada"
+        android:gravity="center"
+        android:text="@string/lbCadCorretor"
+        android:textAlignment="center"
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/text_size"
-        android:gravity="center"
-        android:textAlignment="center"
         android:textStyle="bold"
-        android:layout_margin="@dimen/text_size"
 
         />
 
@@ -30,65 +30,67 @@
         android:id="@+id/etCodigo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/lbCodigo"
-        android:textSize="@dimen/text_sizeComponents"
+        android:enabled="false"
         android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_marginRight="@dimen/fab_margin"/>
+        android:layout_marginRight="@dimen/fab_margin"
+        android:hint="@string/lbCodigo"
+        android:textSize="@dimen/text_sizeComponents" />
 
     <EditText
         android:id="@+id/etNome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/lbNome"
-        android:textSize="@dimen/text_sizeComponents"
         android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_marginRight="@dimen/fab_margin"/>
+        android:layout_marginRight="@dimen/fab_margin"
+        android:hint="@string/lbNome"
+        android:textSize="@dimen/text_sizeComponents" />
 
     <EditText
         android:id="@+id/etTelefone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/lbTelefone"
-        android:textSize="@dimen/text_sizeComponents"
+        android:inputType="phone"
         android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_marginRight="@dimen/fab_margin"/>
+        android:layout_marginRight="@dimen/fab_margin"
+        android:hint="@string/lbTelefone"
+        android:textSize="@dimen/text_sizeComponents" />
 
 
     <EditText
         android:id="@+id/etCreci"
         android:layout_width="match_parent"
+        android:inputType="number"
         android:layout_height="wrap_content"
-        android:hint="@string/lbCreci"
-        android:textSize="@dimen/text_sizeComponents"
         android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_marginRight="@dimen/fab_margin"/>
+        android:layout_marginRight="@dimen/fab_margin"
+        android:hint="@string/lbCreci"
+        android:textSize="@dimen/text_sizeComponents" />
 
 
     <Button
         android:id="@+id/btEndereco"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/lbEndereco"
         android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_marginRight="@dimen/fab_margin"
         android:layout_marginTop="@dimen/fab_margin"
-        />
+        android:layout_marginRight="@dimen/fab_margin"
+        android:hint="@string/lbEndereco" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
+
         <Button
             android:id="@+id/btSalvar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/lbSalvar"
             android:layout_marginLeft="@dimen/fab_margin"
-            android:layout_marginRight="@dimen/fab_margin"
             android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
             android:layout_weight="1"
             android:background="@drawable/botao"
+            android:hint="@string/lbSalvar"
             android:textColorHint="@color/colorWhite"
             android:textStyle="bold"
 
@@ -99,14 +101,13 @@
             android:id="@+id/btCancelar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/lbCancelar"
             android:layout_marginLeft="@dimen/fab_margin"
-            android:layout_marginRight="@dimen/fab_margin"
             android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
             android:layout_weight="1"
             android:background="@drawable/botao"
+            android:hint="@string/lbCancelar"
             android:textColorHint="@color/colorWhite"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>

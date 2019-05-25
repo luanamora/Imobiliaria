@@ -1,9 +1,11 @@
 package com.android.projetoimobiliaria;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -15,8 +17,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
+import com.android.projetoimobiliaria.model.Corretor;
+import com.android.projetoimobiliaria.model.Endereco;
+import com.android.projetoimobiliaria.model.Imovel;
 import com.android.projetoimobiliaria.model.Locatario;
+import com.android.projetoimobiliaria.util.Mensagem;
+import com.android.projetoimobiliaria.util.TipoMensagem;
 import com.orm.SugarContext;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -29,6 +38,8 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         SugarContext.init(this);
+
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -90,10 +101,37 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_tools) {
-
+            Intent intent = new Intent(MainActivity.this, EnderecoActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
+            final AlertDialog.Builder alertConfirmacao = new AlertDialog.Builder(MainActivity.this);
+            alertConfirmacao.setTitle("Confirmação de Exclusão");
+            alertConfirmacao.setMessage("Deseja realmente excluir TODOS os registros do SUGARSQL?");
+            alertConfirmacao.setIcon(R.drawable.ic_alert);
+            alertConfirmacao.setNeutralButton("Sim", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    List<Corretor> corretorList = Corretor.listAll(Corretor.class);
+                    List<Endereco> enderecoList = Endereco.listAll(Endereco.class);
+                    List<Imovel> imovelList = Imovel.listAll(Imovel.class);
+                    List<Locatario> locatarioList = Locatario.listAll(Locatario.class);
+
+                    corretorList.removeAll(corretorList);
+                    enderecoList.removeAll(enderecoList);
+                    imovelList.removeAll(imovelList);
+                    locatarioList.removeAll(locatarioList);
+                    Mensagem.ExibirMensagem(MainActivity.this, "Bando de dados limpo com sucesso!", TipoMensagem.SUCESSO);
+                }
+            });
+            alertConfirmacao.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+            alertConfirmacao.show();
 
         }
 

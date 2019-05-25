@@ -9,6 +9,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.android.projetoimobiliaria.model.Corretor;
+import com.android.projetoimobiliaria.model.Endereco;
+import com.android.projetoimobiliaria.util.Mensagem;
+import com.android.projetoimobiliaria.util.TipoMensagem;
+
+import java.util.List;
+
 public class CorretorActivity extends AppCompatActivity {
 
     private EditText etCodigo, etNome, etTelefone, etCreci;
@@ -22,19 +29,69 @@ public class CorretorActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         loadComponents();
+        limpaCampos();
+        loadEvents();
 
 
     }
 
-    private void loadComponents(){
+    private void loadEvents() {
+
+        btSalvar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (etCodigo.getText().length() > 0 && etNome.getText().toString().length() > 0 && etTelefone.getText().toString().length() > 0 && etCreci.getText().toString().length() > 0) {
+                    Corretor corretor = new Corretor();
+                    corretor.setCodigo(Integer.parseInt(etCodigo.getText().toString()));
+                    corretor.setNome(etNome.getText().toString());
+                    corretor.setTelefone(etTelefone.getText().toString());
+                    corretor.setCreci(Integer.parseInt(etCreci.getText().toString()));
+                    Endereco last = Endereco.last(Endereco.class);
+                    if (last == null) {
+                        corretor.setEndereco(new Endereco(1, "CIDADE1", "ESTADO1", "RUA1", 1234, "85955000"));
+                    } else {
+                        corretor.setEndereco(new Endereco(last.getCodigo() + 1, "CIDADE1", "ESTADO1", "RUA1", 1234, "85955000"));
+                    }
+                    corretor.save();
+                    Mensagem.ExibirMensagem(CorretorActivity.this, "Corretor salvo com Sucesso!", TipoMensagem.SUCESSO);
+                    limpaCampos();
+                } else {
+                    Mensagem.ExibirMensagem(CorretorActivity.this, "Preencha todos os campos!", TipoMensagem.ERRO);
+                }
+            }
+        });
+
+        btCancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+    }
+
+    private void loadComponents() {
         etCodigo = findViewById(R.id.etCodigo);
         etNome = findViewById(R.id.etNome);
         etTelefone = findViewById(R.id.etTelefone);
         etCreci = findViewById(R.id.etCreci);
         btEndereco = findViewById(R.id.btEndereco);
-        btSalvar = findViewById(R.id.btCancelar);
+        btSalvar = findViewById(R.id.btSalvar);
         btCancelar = findViewById(R.id.btCancelar);
-
     }
+
+
+    private void limpaCampos() {
+        Corretor last = Corretor.last(Corretor.class);
+        if (last == null) {
+            etCodigo.setText("1");
+        } else {
+            etCodigo.setText(String.valueOf(last.getCodigo() + 1));
+        }
+        etNome.setText("");
+        etTelefone.setText("");
+        etCreci.setText("");
+    }
+
 
 }
