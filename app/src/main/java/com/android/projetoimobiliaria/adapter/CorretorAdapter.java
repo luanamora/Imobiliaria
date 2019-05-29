@@ -5,7 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
+import com.android.projetoimobiliaria.R;
 import com.android.projetoimobiliaria.model.Corretor;
 
 import java.util.List;
@@ -35,7 +37,15 @@ public class CorretorAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
+    public View getView(int position, View view, ViewGroup parent) {
+        Corretor corretor = corretorList.get(position);
+        view = myInflater.inflate(R.layout.support_simple_spinner_dropdown_item, null);
+        ((TextView) view.findViewById(R.id.etCodigo)).setText(String.valueOf(corretor.getCodigo()));
+        ((TextView) view.findViewById(R.id.etNome)).setText(String.valueOf(corretor.getNome()));
+        ((TextView) view.findViewById(R.id.etTelefone)).setText(String.valueOf(corretor.getTelefone()));
+        ((TextView) view.findViewById(R.id.etCreci)).setText(String.valueOf(corretor.getCreci()));
+
+        return view;
     }
+
 }
