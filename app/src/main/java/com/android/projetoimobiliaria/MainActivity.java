@@ -42,17 +42,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        SugarContext.init(this);
-
-        lvImovel = findViewById(R.id.lvImovel);
-
-        List<Imovel> imovels = Imovel.listAll(Imovel.class, "codigo desc");
-        imovelAdapter = new ImovelAdapter(MainActivity.this, imovels);
-        lvImovel.setAdapter(imovelAdapter);
-
-
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -60,6 +49,22 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        SugarContext.init(this);
+        loadComponents();
+        loadList();
+
+
+    }
+
+    private void loadComponents(){
+        lvImovel = findViewById(R.id.lvImovel);
+    }
+
+    private void loadList(){
+        List<Imovel> imovels = Imovel.listAll(Imovel.class, "codigo desc");
+        imovelAdapter = new ImovelAdapter(MainActivity.this, imovels);
+        lvImovel.setAdapter(imovelAdapter);
     }
 
     @Override

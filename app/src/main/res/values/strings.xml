@@ -29,6 +29,7 @@
     <string name="lbCodigo">Código</string>
     <string name="lbCadCorretor">Cadastro de Corretor</string>
     <string name="lbCadLocatario">Cadastro de Locatário</string>
+    <string name="lbImoveis">Imóveis</string>
     <string name="lbNome">Nome</string>
     <string name="lbTelefone">Telefone</string>
     <string name="lbCreci">CRECI</string>

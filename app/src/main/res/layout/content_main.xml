@@ -16,7 +16,7 @@
         android:layout_margin="@dimen/text_size"
         android:background="@drawable/borda_arredondada"
         android:gravity="center"
-        android:text="@string/lbCadCorretor"
+        android:text="@string/lbImoveis"
         android:textAlignment="center"
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/text_size"
@@ -33,12 +33,15 @@
             android:layout_height="500dp"
             />
     </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="@dimen/fab_margin"
         android:layout_weight="1"
         android:gravity="bottom"
-        android:text="Trabalho Mobile desenvolvido por Eduardo e Luana" />
+        android:text="Trabalho Mobile desenvolvido por Eduardo e Luana"
+        android:textAlignment="center"
+        android:textStyle="bold" />
 
 </LinearLayout>
