@@ -54,9 +54,7 @@ public class ImovelActivity extends AppCompatActivity {
         btSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 save();
-
             }
         });
 
