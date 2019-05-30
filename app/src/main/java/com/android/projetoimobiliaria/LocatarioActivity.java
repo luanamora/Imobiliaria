@@ -10,10 +10,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.android.projetoimobiliaria.model.Locatario;
+import com.android.projetoimobiliaria.util.Mensagem;
+import com.android.projetoimobiliaria.util.TipoMensagem;
+
 public class LocatarioActivity extends AppCompatActivity {
 
     private EditText etCodigo, etNome, etTelefone;
-    private Button btEndereco, btSalvar, btCancelar;
+    private Button btSalvar, btCancelar;
 
 
     @Override
@@ -24,26 +28,48 @@ public class LocatarioActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         loadComponents();
-
+        loadEvents();
+        limpaCampos();
     }
 
-    private void loadComponents(){
+    private void loadComponents() {
         etCodigo = findViewById(R.id.etCodigo);
         etNome = findViewById(R.id.etNome);
         etTelefone = findViewById(R.id.etTelefone);
-        btEndereco = findViewById(R.id.btEndereco);
         btSalvar = findViewById(R.id.btSalvar);
         btCancelar = findViewById(R.id.btCancelar);
     }
 
-    private void loadEvents(){
-        btEndereco.setOnClickListener(new View.OnClickListener() {
+    private void loadEvents() {
+        btSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LocatarioActivity.this, EnderecoActivity.class);
-                startActivity(intent);
+                if (etNome.getText().length() > 0 && etTelefone.getText().toString().length() > 0 && etNome.getText().toString().length() > 0) {
+                    Locatario locatario = new Locatario();
+                    locatario.setCodigo(Integer.parseInt(etCodigo.getText().toString()));
+                    locatario.setNome(etNome.getText().toString());
+                    locatario.setTelefone(Integer.parseInt(etTelefone.getText().toString()));
+                    locatario.save();
+                    Mensagem.ExibirMensagem(LocatarioActivity.this, "Locatario salvo com Sucesso!", TipoMensagem.SUCESSO);
+                    limpaCampos();
+                } else {
+                    Mensagem.ExibirMensagem(LocatarioActivity.this, "Preencha todos os campos!", TipoMensagem.ERRO);
+                }
             }
         });
     }
 
+    private void limpaCampos() {
+        Locatario last = Locatario.last(Locatario.class);
+        if (last == null) {
+            etCodigo.setText("1");
+        } else {
+            etCodigo.setText(String.valueOf(last.getCodigo() + 1));
+        }
+        etNome.setText("");
+        etTelefone.setText("");
+    }
+
 }
+
+
