@@ -65,6 +65,6 @@ public class Corretor extends SugarRecord {
 
     @Override
     public String toString() {
-        return "Corretor{}";
+        return codigo + " - " + nome;
     }
 }

@@ -28,6 +28,7 @@ public class ImovelActivity extends AppCompatActivity {
     private Spinner spCorretor, spLocatario;
     private Button btEndereco, btSalvar, btCancelar;
     private ArrayAdapter<Imovel> imovelAdapter;
+    private ArrayAdapter<Corretor> corretorAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,7 @@ public class ImovelActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         loadComponents();
+        loadSpinnerCorretor();
         loadEvents();
     }
 
@@ -48,6 +50,20 @@ public class ImovelActivity extends AppCompatActivity {
         btSalvar = findViewById(R.id.btSalvar);
         btCancelar = findViewById(R.id.btCancelar);
         etVAluguel = findViewById(R.id.etVAluguel);
+    }
+
+    private void loadSpinnerCorretor(){
+        List<Corretor> corretorList = Corretor.listAll(Corretor.class, "codigo desc");
+        corretorAdapter = new ArrayAdapter<>(ImovelActivity.this, R.layout.support_simple_spinner_dropdown_item,
+                corretorList);
+        spCorretor.setAdapter(corretorAdapter);
+
+    }
+
+    private void loadSpinnerLocatario(){
+        List<Locatario> locatarioList = Locatario.listAll(Locatario.class, "codigo desc");
+        //spLocatario.set
+
     }
 
     private void loadEvents() {
