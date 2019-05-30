@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.android.projetoimobiliaria.adapter.ImovelAdapter;
 import com.android.projetoimobiliaria.model.Corretor;
+import com.android.projetoimobiliaria.model.Endereco;
 import com.android.projetoimobiliaria.model.Imovel;
 import com.android.projetoimobiliaria.model.Locatario;
 
@@ -23,12 +24,13 @@ import java.util.List;
 
 public class ImovelActivity extends AppCompatActivity {
 
-    private TextView tvLabelImovel;
+    private TextView tvEndereco;
     private EditText etCodigo, etDescricao, etTamanho, etVAluguel;
     private Spinner spCorretor, spLocatario;
     private Button btEndereco, btSalvar, btCancelar;
     private ArrayAdapter<Imovel> imovelAdapter;
     private ArrayAdapter<Corretor> corretorAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +40,7 @@ public class ImovelActivity extends AppCompatActivity {
         loadComponents();
         loadSpinnerCorretor();
         loadEvents();
+
     }
 
     private void loadComponents() {
@@ -50,6 +53,7 @@ public class ImovelActivity extends AppCompatActivity {
         btSalvar = findViewById(R.id.btSalvar);
         btCancelar = findViewById(R.id.btCancelar);
         etVAluguel = findViewById(R.id.etVAluguel);
+        tvEndereco = findViewById(R.id.tvEndereco);
     }
 
     private void loadSpinnerCorretor(){
@@ -107,6 +111,5 @@ public class ImovelActivity extends AppCompatActivity {
         imovelAdapter = new ArrayAdapter<>(ImovelActivity.this, R.layout.support_simple_spinner_dropdown_item, imovelList);
 
     }
-
 
 }

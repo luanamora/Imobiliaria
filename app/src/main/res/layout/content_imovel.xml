@@ -74,14 +74,7 @@
         android:layout_marginRight="@dimen/fab_margin" />
 
 
-    <EditText
-        android:id="@+id/etVVenda"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_marginRight="@dimen/fab_margin"
-        android:hint="@string/lbVVenda"
-        android:textSize="@dimen/text_sizeComponents" />
+
 
 
     <EditText
@@ -91,6 +84,15 @@
         android:layout_marginLeft="@dimen/fab_margin"
         android:layout_marginRight="@dimen/fab_margin"
         android:hint="@string/lbVAluguel"
+        android:textSize="@dimen/text_sizeComponents" />
+
+    <TextView
+        android:id="@+id/tvEndereco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:hint="@string/lbEndereco"
         android:textSize="@dimen/text_sizeComponents" />
 
 
