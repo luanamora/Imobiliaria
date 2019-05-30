@@ -54,25 +54,52 @@
         android:hint="@string/lbTamanho"
         android:textSize="@dimen/text_sizeComponents" />
 
-
-    <Spinner
-        android:id="@+id/spCorretor"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_marginTop="@dimen/fab_margin"
-        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        />
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="@string/lbSpinnerCorretor"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:textStyle="bold"
+            />
 
-    <Spinner
-        android:id="@+id/spLocatario"
+        <Spinner
+            android:id="@+id/spCorretor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_marginTop="@dimen/fab_margin"
-        android:layout_marginRight="@dimen/fab_margin" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="@string/lbSpinnerLocatario"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:textStyle="bold"
+            />
+
+
+        <Spinner
+            android:id="@+id/spLocatario"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/margin_spinner"
+            android:layout_marginRight="@dimen/fab_margin" />
+    </LinearLayout>
 
 
 

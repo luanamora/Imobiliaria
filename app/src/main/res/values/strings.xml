@@ -24,6 +24,8 @@
     <string name="lbVAluguel">Valor de Aluguel</string>
     <string name="lbLocatario">Locatario</string>
     <string name="lbCorretor">Corretor</string>
+    <string name="lbSpinnerCorretor">Corretor:</string>
+    <string name="lbSpinnerLocatario">Locatario:</string>
     <string name="lbImovel">Cadastro de Imóvel</string>
     <string name="lbCadEndereco">Cadastro de Endereço</string>
     <string name="lbEndereco">Endereço</string>
