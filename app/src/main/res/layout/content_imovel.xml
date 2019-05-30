@@ -95,7 +95,7 @@
         <Spinner
             android:id="@+id/spLocatario"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/fab_margin"
             android:layout_marginTop="@dimen/margin_spinner"
             android:layout_marginRight="@dimen/fab_margin" />
