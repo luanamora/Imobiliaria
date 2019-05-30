@@ -53,9 +53,14 @@ public class EnderecoActivity extends AppCompatActivity {
                     endereco.save();
                     Mensagem.ExibirMensagem(EnderecoActivity.this, "Endereço salvo com Sucesso!", TipoMensagem.SUCESSO);
                     limpaCampos();
-                    Intent intent = new Intent(EnderecoActivity.this, ImovelActivity.class);
-                    intent.putExtra("ENDERECO", endereco.getCodigo());
-                    startActivity(intent);
+
+                    last = Endereco.last(Endereco.class);
+                    if (last == null) {
+                        ImovelActivity.tvEndereco.setText("Não existem locais cadastrados");
+                    } else {
+                        ImovelActivity.tvEndereco.setText(last.toStringAdapter());
+                    }
+                    finish();
                 } else {
                     Mensagem.ExibirMensagem(EnderecoActivity.this, "Preencha todos os campos!", TipoMensagem.ERRO);
                 }

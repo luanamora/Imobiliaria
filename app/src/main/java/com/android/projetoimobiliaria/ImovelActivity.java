@@ -24,7 +24,7 @@ import java.util.List;
 
 public class ImovelActivity extends AppCompatActivity {
 
-    private TextView tvEndereco;
+    public static TextView tvEndereco;
     private EditText etCodigo, etDescricao, etTamanho, etVAluguel;
     private Spinner spCorretor, spLocatario;
     private Button btEndereco, btSalvar, btCancelar;
@@ -37,6 +37,8 @@ public class ImovelActivity extends AppCompatActivity {
         setContentView(R.layout.activity_imovel);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
         loadComponents();
         loadSpinnerCorretor();
         loadEvents();
