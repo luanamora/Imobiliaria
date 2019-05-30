@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,10 +38,9 @@ public class ImovelActivity extends AppCompatActivity {
         setContentView(R.layout.activity_imovel);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
         loadComponents();
         loadSpinnerCorretor();
+        loadSpinnerLocatario();
         loadEvents();
 
     }
@@ -68,7 +68,9 @@ public class ImovelActivity extends AppCompatActivity {
 
     private void loadSpinnerLocatario(){
         List<Locatario> locatarioList = Locatario.listAll(Locatario.class, "codigo desc");
-        //spLocatario.set
+        ArrayAdapter locatarioAdapter = new ArrayAdapter<>(ImovelActivity.this, R.layout.support_simple_spinner_dropdown_item,
+                locatarioList);
+        spLocatario.setAdapter(locatarioAdapter);
 
     }
 
