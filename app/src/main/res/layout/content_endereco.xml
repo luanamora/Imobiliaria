@@ -19,7 +19,7 @@
         android:textAlignment="center"
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/text_size"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/etCidade"
@@ -52,11 +52,11 @@
         android:id="@+id/etNumero"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:maxLength="4"
         android:layout_marginLeft="@dimen/fab_margin"
         android:layout_marginRight="@dimen/fab_margin"
         android:hint="@string/lbNumero"
+        android:inputType="number"
+        android:maxLength="4"
         android:textSize="@dimen/text_sizeComponents" />
 
     <EditText
@@ -66,8 +66,8 @@
         android:layout_marginLeft="@dimen/fab_margin"
         android:layout_marginRight="@dimen/fab_margin"
         android:hint="@string/lbCEP"
+        android:inputType="number"
         android:textSize="@dimen/text_sizeComponents" />
-
 
 
     <LinearLayout

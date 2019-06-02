@@ -8,7 +8,6 @@ public class Corretor extends SugarRecord {
     private int codigo;
     private String nome;
     private String telefone;
-    private Endereco endereco;
     private int creci;
 
     public Corretor() {
@@ -19,7 +18,6 @@ public class Corretor extends SugarRecord {
         this.codigo = codigo;
         this.nome = nome;
         this.telefone = telefone;
-        this.endereco = endereco;
         this.creci = creci;
     }
 
@@ -45,14 +43,6 @@ public class Corretor extends SugarRecord {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
-    }
-
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
     }
 
     public int getCreci() {

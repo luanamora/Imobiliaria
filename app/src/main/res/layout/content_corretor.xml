@@ -42,6 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/fab_margin"
         android:layout_marginRight="@dimen/fab_margin"
+        android:inputType="text"
         android:hint="@string/lbNome"
         android:textSize="@dimen/text_sizeComponents" />
 
@@ -49,7 +50,7 @@
         android:id="@+id/etTelefone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="phone"
+        android:inputType="number"
         android:layout_marginLeft="@dimen/fab_margin"
         android:layout_marginRight="@dimen/fab_margin"
         android:hint="@string/lbTelefone"
@@ -65,16 +66,6 @@
         android:layout_marginRight="@dimen/fab_margin"
         android:hint="@string/lbCreci"
         android:textSize="@dimen/text_sizeComponents" />
-
-
-    <Button
-        android:id="@+id/btEndereco"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_marginTop="@dimen/fab_margin"
-        android:layout_marginRight="@dimen/fab_margin"
-        android:hint="@string/lbEndereco" />
 
     <LinearLayout
         android:layout_width="match_parent"

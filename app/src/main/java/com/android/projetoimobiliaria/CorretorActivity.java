@@ -20,7 +20,7 @@ import java.util.List;
 public class CorretorActivity extends AppCompatActivity {
 
     private EditText etCodigo, etNome, etTelefone, etCreci;
-    private Button btEndereco, btSalvar, btCancelar;
+    private Button btSalvar, btCancelar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,12 +47,6 @@ public class CorretorActivity extends AppCompatActivity {
                     corretor.setNome(etNome.getText().toString());
                     corretor.setTelefone(etTelefone.getText().toString());
                     corretor.setCreci(Integer.parseInt(etCreci.getText().toString()));
-                    Endereco last = Endereco.last(Endereco.class);
-                    if (last == null) {
-                        corretor.setEndereco(new Endereco(1, "CIDADE1", "ESTADO1", "RUA1", 1234, "85955000"));
-                    } else {
-                        corretor.setEndereco(new Endereco(last.getCodigo() + 1, "CIDADE1", "ESTADO1", "RUA1", 1234, "85955000"));
-                    }
                     corretor.save();
                     Mensagem.ExibirMensagem(CorretorActivity.this, "Corretor salvo com Sucesso!", TipoMensagem.SUCESSO);
                     limpaCampos();
@@ -69,13 +63,7 @@ public class CorretorActivity extends AppCompatActivity {
             }
         });
 
-        btEndereco.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(CorretorActivity.this, EnderecoActivity.class);
-                startActivity(intent);
-            }
-        });
+
 
     }
 
@@ -84,7 +72,6 @@ public class CorretorActivity extends AppCompatActivity {
         etNome = findViewById(R.id.etNome);
         etTelefone = findViewById(R.id.etTelefone);
         etCreci = findViewById(R.id.etCreci);
-        btEndereco = findViewById(R.id.btEndereco);
         btSalvar = findViewById(R.id.btSalvar);
         btCancelar = findViewById(R.id.btCancelar);
     }

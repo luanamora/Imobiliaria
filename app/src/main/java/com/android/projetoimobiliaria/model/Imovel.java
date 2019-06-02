@@ -9,22 +9,19 @@ public class Imovel extends SugarRecord {
     private String descricao;
     private Endereco endereco;
     private Double tamanho;
-    private Double valorVenda;
     private Double valorAluguel;
     private Locatario locatario;
     private Corretor corretor;
-    private boolean alugada;
+    private int alugada;
 
     public Imovel() {
     }
 
-    public Imovel(int codigo, String descricao, Endereco endereco, Double tamanho,
-                  Double valorVenda, Double valorAluguel, Locatario locatario, Corretor corretor, boolean alugada) {
+    public Imovel(int codigo, String descricao, Endereco endereco, Double tamanho, Double valorAluguel, Locatario locatario, Corretor corretor, int alugada) {
         this.codigo = codigo;
         this.descricao = descricao;
         this.endereco = endereco;
         this.tamanho = tamanho;
-        this.valorVenda = valorVenda;
         this.valorAluguel = valorAluguel;
         this.locatario = locatario;
         this.corretor = corretor;
@@ -63,14 +60,6 @@ public class Imovel extends SugarRecord {
         this.tamanho = tamanho;
     }
 
-    public Double getValorVenda() {
-        return valorVenda;
-    }
-
-    public void setValorVenda(Double valorVenda) {
-        this.valorVenda = valorVenda;
-    }
-
     public Double getValorAluguel() {
         return valorAluguel;
     }
@@ -95,16 +84,16 @@ public class Imovel extends SugarRecord {
         this.corretor = corretor;
     }
 
-    public boolean isAlugada() {
+    public int getAlugada() {
         return alugada;
     }
 
-    public void setAlugada(boolean alugada) {
+    public void setAlugada(int alugada) {
         this.alugada = alugada;
     }
 
     @Override
     public String toString() {
-        return "Imovel{}";
+        return codigo + "- " + descricao;
     }
 }

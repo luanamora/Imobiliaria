@@ -45,6 +45,6 @@ public class Locatario extends SugarRecord {
 
     @Override
     public String toString() {
-        return "Locatario{}";
+        return nome + " - " + telefone;
     }
 }

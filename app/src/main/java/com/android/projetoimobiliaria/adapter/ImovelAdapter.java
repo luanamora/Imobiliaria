@@ -44,7 +44,7 @@ public class ImovelAdapter extends BaseAdapter {
         view.findViewById(R.id.ivHouse);//Adiciono a Imagem
         ((TextView) view.findViewById(R.id.tvValor)).setText(String.valueOf(imovel.getValorAluguel()));
 
-        if (imovel.isAlugada()) { //Verifico se está ou não alugada para definir o texto
+        if (imovel.getAlugada() == 1) { //Verifico se está ou não alugada para definir o texto
             ((TextView) view.findViewById(R.id.tvStatus)).setText("Alugada");
         } else {
             ((TextView) view.findViewById(R.id.tvStatus)).setText("Disponivel");
