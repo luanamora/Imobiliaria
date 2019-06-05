@@ -39,6 +39,8 @@
         <ListView
             android:id="@+id/lvImovel"
             android:layout_width="match_parent"
+            android:choiceMode="singleChoice"
+            android:cacheColorHint="@color/design_default_color_primary"
             android:layout_height="500dp"
             />
     </LinearLayout>

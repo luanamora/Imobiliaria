@@ -96,6 +96,16 @@ public class Imovel extends SugarRecord implements Serializable {
 
     @Override
     public String toString() {
-        return codigo + "- " + descricao;
+        return codigo + " - " + descricao;
+    }
+
+    public String toStringAlugada() {
+        return "ID: #" + codigo + "\nDescrição: " + descricao + "\n Tamanho:" + tamanho +"m²\n Endereço: "+ endereco.getEstado() + " " + endereco.getCidade() + " "+ endereco.getRua()+ " "+ endereco.getNumero() + "\nAluguel: R$" + valorAluguel + "\n Alugada por: " + locatario.getNome()
+                + "\nResponsavel: " + corretor.getNome() + " Fone: " + corretor.getTelefone() + "\n STATUS: ALUGADA";
+    }
+
+    public String toStringNaoAlugada() {
+        return "ID: #" + codigo + "\nDescrição: " + descricao + "\n Tamanho:" + tamanho +"m²\n Endereço: " + endereco.getEstado() + " " + endereco.getCidade() + " "+ endereco.getRua()+ " "+ endereco.getNumero() + "\nAluguel: R$" + valorAluguel + "\n Alugada por: " + locatario.getNome()
+                + "\nResponsavel: " + corretor.getNome() + " Fone: " + corretor.getTelefone() + "\n STATUS: NÃO ALUGADA";
     }
 }
