@@ -33,8 +33,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
-                android:textStyle="bold"
                 android:text="VALOR"
+                android:textAlignment="center"
+                android:textSize="@dimen/fab_margin" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Status:"
                 android:textAlignment="center"
                 android:textSize="@dimen/fab_margin" />
 
@@ -43,7 +50,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
-                android:textStyle="bold"
                 android:text="STATUS"
                 android:textAlignment="center"
                 android:textSize="@dimen/fab_margin" />
@@ -74,7 +80,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
-                android:textStyle="bold"
                 android:text="CORRETOR"
                 android:textAlignment="center"
                 android:textSize="@dimen/fab_margin" />
@@ -92,7 +97,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:text="TELEFONE"
-                android:textStyle="bold"
                 android:textAlignment="center"
                 android:textSize="@dimen/fab_margin" />
         </LinearLayout>

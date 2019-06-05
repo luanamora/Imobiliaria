@@ -17,6 +17,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity
     private ImovelAdapter imovelAdapter;
     private ListView lvImovel;
     private Button btAtualizar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,32 +57,71 @@ public class MainActivity extends AppCompatActivity
         SugarContext.init(this);
         loadComponents();
         loadList();
-
+        loadActions();
 
     }
 
-    private void loadComponents(){
+    private void loadActions() {
+        lvImovel.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Imovel imovel = (Imovel) imovelAdapter.getItem(position);
+                Endereco endereco = imovel.getEndereco();
+
+
+                final AlertDialog.Builder alertConfirmacao = new AlertDialog.Builder(MainActivity.this);
+                alertConfirmacao.setTitle("Detalhes do Imovel");
+
+                alertConfirmacao.setMessage("ID: #" + imovel.getCodigo()+ "\nDescrição: " + imovel.getDescricao() + "\n Tamanho:" + imovel.getTamanho() +"m²\n Endereço: "
+                        + endereco.getEstado() + " " + endereco.getCidade() + " "+ endereco.getRua()+ " "+ endereco.getNumero()
+                        + "\nAluguel: R$" + imovel.getValorAluguel() + "\n Alugada por: " + imovel.getLocatario().getNome()
+                        + "\nResponsavel: " + imovel.getCorretor().getNome() + " Fone: " + imovel.getCorretor().getTelefone() + "\n STATUS: ALUGADA");
+
+                alertConfirmacao.setIcon(R.drawable.ic_alert);
+                alertConfirmacao.setNeutralButton("Alugar para novo morador", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        novoAluguel();
+                    }
+                });
+                alertConfirmacao.setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                alertConfirmacao.show();
+            }
+        });
+
+    }
+
+    private void novoAluguel() {
+        Mensagem.ExibirMensagem(this, "NovoAluguel()", TipoMensagem.ALERTA);
+    }
+
+    private void loadComponents() {
         lvImovel = findViewById(R.id.lvImovel);
         btAtualizar = findViewById(R.id.btAtualizar);
 
         List<Locatario> l = Locatario.listAll(Locatario.class);
-        if(l.size() == 0){
-            Locatario locatario = new Locatario(1,"Ninguém",0);
+        if (l.size() == 0) {
+            Locatario locatario = new Locatario(1, "Ninguém", 0);
             locatario.save();
         }
-
 
 
         btAtualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loadList();
-                Mensagem.ExibirMensagem(MainActivity.this,"Lista Atualizada!",TipoMensagem.SUCESSO);
+                Mensagem.ExibirMensagem(MainActivity.this, "Lista Atualizada!", TipoMensagem.SUCESSO);
             }
         });
     }
 
-    private void loadList(){
+    private void loadList() {
         List<Imovel> imovels = Imovel.listAll(Imovel.class, "codigo desc");
         imovelAdapter = new ImovelAdapter(MainActivity.this, imovels);
         lvImovel.setAdapter(imovelAdapter);
