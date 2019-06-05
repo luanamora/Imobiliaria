@@ -1,5 +1,6 @@
 package com.android.projetoimobiliaria;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ import com.android.projetoimobiliaria.model.Imovel;
 import com.android.projetoimobiliaria.model.Locatario;
 import com.android.projetoimobiliaria.util.Mensagem;
 import com.android.projetoimobiliaria.util.TipoMensagem;
+import com.android.projetoimobiliaria.util.ViewDialog;
 import com.orm.SugarContext;
 
 import java.util.List;
@@ -70,11 +72,14 @@ public class MainActivity extends AppCompatActivity
                 Endereco endereco = imovel.getEndereco();
 
 
-                final AlertDialog.Builder alertConfirmacao = new AlertDialog.Builder(MainActivity.this);
+                ViewDialog dialog =  new ViewDialog();
+                dialog.showDialog(MainActivity.this,imovel);
+
+                /*final AlertDialog.Builder alertConfirmacao = new AlertDialog.Builder(MainActivity.this);
                 alertConfirmacao.setTitle("Detalhes do Imovel");
 
-                alertConfirmacao.setMessage("ID: #" + imovel.getCodigo()+ "\nDescrição: " + imovel.getDescricao() + "\n Tamanho:" + imovel.getTamanho() +"m²\n Endereço: "
-                        + endereco.getEstado() + " " + endereco.getCidade() + " "+ endereco.getRua()+ " "+ endereco.getNumero()
+                alertConfirmacao.setMessage("ID: #" + imovel.getCodigo() + "\nDescrição: " + imovel.getDescricao() + "\n Tamanho:" + imovel.getTamanho() + "m²\n Endereço: "
+                        + endereco.getEstado() + " " + endereco.getCidade() + " " + endereco.getRua() + " " + endereco.getNumero()
                         + "\nAluguel: R$" + imovel.getValorAluguel() + "\n Alugada por: " + imovel.getLocatario().getNome()
                         + "\nResponsavel: " + imovel.getCorretor().getNome() + " Fone: " + imovel.getCorretor().getTelefone() + "\n STATUS: ALUGADA");
 
@@ -91,7 +96,7 @@ public class MainActivity extends AppCompatActivity
                         dialog.cancel();
                     }
                 });
-                alertConfirmacao.show();
+                alertConfirmacao.show();*/
             }
         });
 

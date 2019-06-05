@@ -12,22 +12,23 @@ import com.android.projetoimobiliaria.R;
 import com.android.projetoimobiliaria.model.Imovel;
 
 public class ViewDialog {
-    public void showDialod(Activity activity, Imovel imovel){
+    public void showDialog(Activity activity, Imovel imovel){
         final Dialog dialog = new Dialog(activity);
-        //dialog.requestWindowFeature(R.layout.itemdialog); //criar layout
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); //criar layout
+        dialog.setContentView(R.layout.item_dialog);
         dialog.setCancelable(true);
 
-        ((TextView) dialog.findViewById(R.id.tvCorretor)).setText(String.valueOf(imovel.getCorretor().getNome()));
-        ((TextView) dialog.findViewById(R.id.tvTelefone)).setText(String.valueOf(imovel.getCorretor().getTelefone()));
+        ((TextView) dialog.findViewById(R.id.tvCo)).setText((imovel.getCorretor().getNome()));
+        ((TextView) dialog.findViewById(R.id.tvTe)).setText((imovel.getCorretor().getTelefone()));
 
-        Button dialogButton = (Button) dialog.findViewById(R.id.btCancelar);
-        dialogButton.setOnClickListener(new View.OnClickListener() {
+        //Button dialogButton = (Button) dialog.findViewById(R.id.btCancelar);
+       /* dialogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
             }
         });
-
+*/
         dialog.show();
         Window window = dialog.getWindow();
         window.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
