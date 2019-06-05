@@ -3,7 +3,9 @@ package com.android.projetoimobiliaria.model;
 import com.orm.SugarRecord;
 import com.orm.dsl.Unique;
 
-public class Locatario extends SugarRecord {
+import java.io.Serializable;
+
+public class Locatario extends SugarRecord implements Serializable {
     @Unique
     private int codigo;
     private String nome;

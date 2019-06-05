@@ -3,7 +3,9 @@ package com.android.projetoimobiliaria.model;
 import com.orm.SugarRecord;
 import com.orm.dsl.Unique;
 
-public class Endereco extends SugarRecord {
+import java.io.Serializable;
+
+public class Endereco extends SugarRecord implements Serializable {
     @Unique
     private int codigo;
     private String cidade;
