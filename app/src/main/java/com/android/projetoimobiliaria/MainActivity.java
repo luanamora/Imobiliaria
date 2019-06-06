@@ -151,6 +151,7 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_imovel) {
             Intent intent = new Intent(MainActivity.this, ImovelActivity.class);
+            intent.putExtra("EDICAO", 0);
             startActivity(intent);
 
         } else if (id == R.id.nav_corretor) {

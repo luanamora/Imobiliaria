@@ -2,17 +2,21 @@ package com.android.projetoimobiliaria.util;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.android.projetoimobiliaria.ImovelActivity;
+import com.android.projetoimobiliaria.MainActivity;
 import com.android.projetoimobiliaria.R;
 import com.android.projetoimobiliaria.model.Imovel;
 
 public class ViewDialog {
-    public void showDialog(Activity activity, Imovel imovel){
+    public void showDialog(final Activity activity, Imovel imovel){
         final Dialog dialog = new Dialog(activity);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); //criar layout
         dialog.setContentView(R.layout.item_dialog);
@@ -56,7 +60,10 @@ public class ViewDialog {
         dialogButtonEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.dismiss();
+                Intent intent = new Intent( activity, ImovelActivity.class);
+                intent.putExtra("EDICAO", 1);
+                activity.startActivity(intent);
+                //startActivity(intent);
             }
         });
         dialog.show();
