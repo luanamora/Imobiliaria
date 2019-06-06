@@ -29,6 +29,7 @@ import com.android.projetoimobiliaria.model.Imovel;
 import com.android.projetoimobiliaria.model.Locatario;
 import com.android.projetoimobiliaria.util.Mensagem;
 import com.android.projetoimobiliaria.util.TipoMensagem;
+import com.android.projetoimobiliaria.util.ViewDialog;
 import com.orm.SugarContext;
 
 import java.util.List;
@@ -69,36 +70,9 @@ public class MainActivity extends AppCompatActivity
                 Imovel imovel = (Imovel) imovelAdapter.getItem(position);
                 Endereco endereco = imovel.getEndereco();
 
-
-<<<<<<< HEAD
-                final AlertDialog.Builder alertConfirmacao = new AlertDialog.Builder(MainActivity.this);
-                alertConfirmacao.setTitle("Detalhes do Imovel");
-
-                alertConfirmacao.setMessage("ID: #" + imovel.getCodigo()+ "\nDescrição: " + imovel.getDescricao() + "\n Tamanho:" + imovel.getTamanho() +"m²\n Endereço: "
-                        + endereco.getEstado() + " " + endereco.getCidade() + " "+ endereco.getRua()+ " "+ endereco.getNumero()
-                        + "\nAluguel: R$" + imovel.getValorAluguel() + "\n Alugada por: " + imovel.getLocatario().getNome()
-                        + "\nResponsavel: " + imovel.getCorretor().getNome() + " Fone: " + imovel.getCorretor().getTelefone() + "\n STATUS: ALUGADA");
-
-                alertConfirmacao.setIcon(R.drawable.ic_alert);
-                alertConfirmacao.setNeutralButton("Alugar para novo morador", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        novoAluguel();
-                    }
-                });
-                alertConfirmacao.setNegativeButton("Ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-                alertConfirmacao.show();
-=======
                 ViewDialog dialog =  new ViewDialog();
                 dialog.showDialog(MainActivity.this,imovel);
 
-
->>>>>>> ce03a3c9539e1b9571842d8e778c761561d3c382
             }
         });
 
