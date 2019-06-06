@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity
                 Endereco endereco = imovel.getEndereco();
 
 
+<<<<<<< HEAD
                 final AlertDialog.Builder alertConfirmacao = new AlertDialog.Builder(MainActivity.this);
                 alertConfirmacao.setTitle("Detalhes do Imovel");
 
@@ -92,6 +93,12 @@ public class MainActivity extends AppCompatActivity
                     }
                 });
                 alertConfirmacao.show();
+=======
+                ViewDialog dialog =  new ViewDialog();
+                dialog.showDialog(MainActivity.this,imovel);
+
+
+>>>>>>> ce03a3c9539e1b9571842d8e778c761561d3c382
             }
         });
 
