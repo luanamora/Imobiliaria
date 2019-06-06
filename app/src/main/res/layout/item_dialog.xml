@@ -41,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="<Nada informado>" />
+            android:text="Nada informado" />
     </LinearLayout>
 
     <LinearLayout
@@ -61,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="<Nada informado>" />
+            android:text="Nada informado" />
     </LinearLayout>
 
     <LinearLayout
@@ -81,7 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="<Nada informado>" />
+            android:text="Nada informado" />
     </LinearLayout>
 
     <LinearLayout
@@ -101,7 +101,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="<Nada informado>" />
+            android:text="Nada informado" />
     </LinearLayout>
 
     <TextView
@@ -130,7 +130,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="<Nada informado>" />
+            android:text="Nada informado" />
     </LinearLayout>
 
     <LinearLayout
@@ -150,7 +150,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="<Nada informado>" />
+            android:text="Nada informado" />
     </LinearLayout>
 
     <LinearLayout
@@ -170,7 +170,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="<Nada informado>" />
+            android:text="Nada informado" />
     </LinearLayout>
 
     <LinearLayout
@@ -190,7 +190,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="<Nada informado>" />
+            android:text="Nada informado" />
     </LinearLayout>
 
     <LinearLayout
@@ -210,7 +210,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="<Nada informado>" />
+            android:text="Nada informado" />
     </LinearLayout>
 
     <TextView
@@ -239,7 +239,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="<Nada informado>" />
+            android:text="Nada informado" />
     </LinearLayout>
 
     <LinearLayout
@@ -259,9 +259,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="<Nada informado>" />
+            android:text="Nada informado" />
     </LinearLayout>
-
 
 
     <TextView
@@ -290,7 +289,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="<Nada informado>" />
+            android:text="Nada informado" />
     </LinearLayout>
 
     <LinearLayout
@@ -310,8 +309,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="<Nada informado>" />
+            android:text="Nada informado" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -329,7 +329,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="<Nada informado>" />
+            android:text="Nada informado" />
     </LinearLayout>
 
 
@@ -347,7 +347,6 @@
             android:background="@drawable/botao"
             android:text="@string/lbOk"
             android:textColor="@color/colorWhite"
-            android:textSize="11dp"
             android:textStyle="bold" />
 
         <Button
@@ -359,7 +358,6 @@
             android:background="@drawable/botao"
             android:text="@string/lbEditarImovel"
             android:textColor="@color/colorWhite"
-            android:textSize="11dp"
             android:textStyle="bold" />
     </LinearLayout>
 
