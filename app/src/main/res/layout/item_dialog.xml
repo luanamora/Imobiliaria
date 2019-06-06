@@ -333,9 +333,6 @@
     </LinearLayout>
 
 
-<<<<<<< HEAD
-</LinearLayout>
-=======
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -367,4 +364,3 @@
     </LinearLayout>
 
 </LinearLayout>
->>>>>>> c06726daeeeafa2646019ec0a9cae7b72ada9e03
