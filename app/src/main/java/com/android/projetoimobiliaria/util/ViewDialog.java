@@ -18,17 +18,47 @@ public class ViewDialog {
         dialog.setContentView(R.layout.item_dialog);
         dialog.setCancelable(true);
 
-        ((TextView) dialog.findViewById(R.id.tvCo)).setText((imovel.getCorretor().getNome()));
-        ((TextView) dialog.findViewById(R.id.tvTe)).setText((imovel.getCorretor().getTelefone()));
+        //Corretor
+        ((TextView) dialog.findViewById(R.id.tvCorretorNome1)).setText((imovel.getCorretor().getNome()));
+        ((TextView) dialog.findViewById(R.id.tvCorretorTelefone1)).setText((imovel.getCorretor().getTelefone()));
+        ((TextView) dialog.findViewById(R.id.tvCorretorCreci1)).setText((imovel.getCorretor().getCreci()));
 
-        //Button dialogButton = (Button) dialog.findViewById(R.id.btCancelar);
-       /* dialogButton.setOnClickListener(new View.OnClickListener() {
+        //Endereço
+        ((TextView) dialog.findViewById(R.id.tvEnderecoCEP1)).setText((imovel.getEndereco().getCep()));
+        ((TextView) dialog.findViewById(R.id.tvEnderecoEstado1)).setText((imovel.getEndereco().getEstado()));
+        ((TextView) dialog.findViewById(R.id.tvEnderecoMunicipio1)).setText((imovel.getEndereco().getCidade()));
+        ((TextView) dialog.findViewById(R.id.tvEnderecoRua1)).setText((imovel.getEndereco().getCidade()));
+        ((TextView) dialog.findViewById(R.id.tvEnderecoNumero1)).setText((imovel.getEndereco().getNumero()));
+
+        //Locatario
+        ((TextView) dialog.findViewById(R.id.tvLocatarioNome1)).setText((imovel.getLocatario().getNome()));
+        ((TextView) dialog.findViewById(R.id.tvLocatarioTelefone1)).setText((imovel.getLocatario().getTelefone()));
+
+        //Imovel
+        ((TextView) dialog.findViewById(R.id.tvImovelDesc1)).setText((imovel.getDescricao()));
+        ((TextView) dialog.findViewById(R.id.tvImovelTam1)).setText((imovel.getTamanho() + "m²"));
+        ((TextView) dialog.findViewById(R.id.tvImovelAluguel1)).setText(("R$" + imovel.getValorAluguel()));
+        if(imovel.getAlugada() == 1){
+            ((TextView) dialog.findViewById(R.id.tvImovelAlugada1)).setText(("DISPONIVEL"));
+        }else {
+            ((TextView) dialog.findViewById(R.id.tvImovelAlugada1)).setText(("ALUGADA"));
+        }
+
+        Button dialogButton = (Button) dialog.findViewById(R.id.btOk);
+        Button dialogButtonEdit = (Button) dialog.findViewById(R.id.btEditar);
+        dialogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
             }
         });
-*/
+
+        dialogButtonEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
         dialog.show();
         Window window = dialog.getWindow();
         window.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);

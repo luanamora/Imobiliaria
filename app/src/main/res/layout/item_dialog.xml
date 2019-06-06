@@ -7,21 +7,22 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/fab_margin"
         android:background="@drawable/borda_arredondada"
         android:gravity="center"
         android:text="Detalhes"
+        android:textColor="@color/colorWhite"
         android:textSize="22dp"
-        android:layout_marginBottom="@dimen/fab_margin"
-        android:textStyle="bold"
-        android:textColor="@color/colorWhite" />
+        android:textStyle="bold" />
+
     <TextView
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
         android:gravity="center"
         android:text="Ímovel"
-        android:background="@color/colorPrimary"
         android:textColor="@color/colorWhite"
-        android:textStyle="bold"
-        android:layout_height="wrap_content" />
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,6 +43,7 @@
             android:layout_weight="0.5"
             android:text="<Nada informado>" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,7 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="Descrição:" />
+            android:text="Tamanho:" />
 
         <TextView
             android:id="@+id/tvImovelTam1"
@@ -61,6 +63,7 @@
             android:layout_weight="0.5"
             android:text="<Nada informado>" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -80,6 +83,7 @@
             android:layout_weight="0.5"
             android:text="<Nada informado>" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -99,14 +103,175 @@
             android:layout_weight="0.5"
             android:text="<Nada informado>" />
     </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:text="Endereço"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvEnderecoEstado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="Estado:" />
+
+        <TextView
+            android:id="@+id/tvEnderecoEstado1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="<Nada informado>" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvEnderecoMunicipio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="Municipio:" />
+
+        <TextView
+            android:id="@+id/tvEnderecoMunicipio1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="<Nada informado>" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvEnderecoRua"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="Rua:" />
+
+        <TextView
+            android:id="@+id/tvEnderecoRua1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="<Nada informado>" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvEnderecoNumero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="Numero:" />
+
+        <TextView
+            android:id="@+id/tvEnderecoNumero1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="<Nada informado>" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvEnderecoCEP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="CEP:" />
+
+        <TextView
+            android:id="@+id/tvEnderecoCEP1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="<Nada informado>" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:text="Locatário"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvLocatarioNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="Nome:" />
+
+        <TextView
+            android:id="@+id/tvLocatarioNome1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="<Nada informado>" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvLocatarioTelefone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="Telefone:" />
+
+        <TextView
+            android:id="@+id/tvLocatarioTelefone1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="<Nada informado>" />
+    </LinearLayout>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
         android:gravity="center"
         android:text="Corretor"
-        android:background="@color/colorPrimary"
         android:textColor="@color/colorWhite"
-        android:textStyle="bold"
-        android:layout_height="wrap_content" />
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -127,6 +292,7 @@
             android:layout_weight="0.5"
             android:text="<Nada informado>" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -152,7 +318,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tvCorretorCreci"
+            android:id="@+id/tvLocatarioCreci"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
@@ -166,110 +332,35 @@
             android:text="<Nada informado>" />
     </LinearLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:text="Endereço"
-        android:background="@color/colorPrimary"
-        android:textColor="@color/colorWhite"
-        android:textStyle="bold"
-        android:layout_height="wrap_content" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tvEnderecoEstado"
+        <Button
+            android:id="@+id/btOk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
             android:layout_weight="0.5"
-            android:text="Estado:" />
+            android:background="@drawable/botao"
+            android:text="@string/lbOk"
+            android:textColor="@color/colorWhite"
+            android:textSize="11dp"
+            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/tvEnderecoEstado1"
+        <Button
+            android:id="@+id/btEditar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
             android:layout_weight="0.5"
-            android:text="<Nada informado>" />
+            android:background="@drawable/botao"
+            android:text="@string/lbEditarImovel"
+            android:textColor="@color/colorWhite"
+            android:textSize="11dp"
+            android:textStyle="bold" />
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/tvEnderecoMunicipio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:text="Municipio:" />
-
-        <TextView
-            android:id="@+id/tvEnderecoMunicipio1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:text="<Nada informado>" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/tvEnderecoRua"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:text="Rua:" />
-
-        <TextView
-            android:id="@+id/tvEnderecoRua1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:text="<Nada informado>" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/tvEnderecoNumero"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:text="Numero:" />
-
-        <TextView
-            android:id="@+id/tvEnderecoNumero1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:text="<Nada informado>" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/tvEnderecoCEP"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:text="CEP:" />
-
-        <TextView
-            android:id="@+id/tvEnderecoCEP1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:text="<Nada informado>" />
-    </LinearLayout>
-
 
 </LinearLayout>
