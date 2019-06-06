@@ -33,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/fab_margin"
         android:layout_marginRight="@dimen/fab_margin"
+        android:enabled="false"
         android:hint="@string/lbCodigo"
         android:textSize="@dimen/text_sizeComponents" />
 
