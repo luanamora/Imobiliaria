@@ -42,7 +42,7 @@
     <string name="lbNumero">Numero</string>
     <string name="lbCEP">CEP</string>
     <string name="lbOk">Ok</string>
-    <string name="lbEditarImovel">Alugar para novo morador</string>
+    <string name="lbEditarImovel">Alugar</string>
     <string name="lbListaImovel">Lista de Ímoveis</string>
     <string name="title_activity_endereco">EnderecoActivity</string>
 

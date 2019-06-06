@@ -21,24 +21,24 @@ public class ViewDialog {
         //Corretor
         ((TextView) dialog.findViewById(R.id.tvCorretorNome1)).setText((imovel.getCorretor().getNome()));
         ((TextView) dialog.findViewById(R.id.tvCorretorTelefone1)).setText((imovel.getCorretor().getTelefone()));
-        ((TextView) dialog.findViewById(R.id.tvCorretorCreci1)).setText((imovel.getCorretor().getCreci()));
+        ((TextView) dialog.findViewById(R.id.tvCorretorCreci1)).setText(String.valueOf(imovel.getCorretor().getCreci()));
 
         //Endereço
         ((TextView) dialog.findViewById(R.id.tvEnderecoCEP1)).setText((imovel.getEndereco().getCep()));
         ((TextView) dialog.findViewById(R.id.tvEnderecoEstado1)).setText((imovel.getEndereco().getEstado()));
         ((TextView) dialog.findViewById(R.id.tvEnderecoMunicipio1)).setText((imovel.getEndereco().getCidade()));
         ((TextView) dialog.findViewById(R.id.tvEnderecoRua1)).setText((imovel.getEndereco().getCidade()));
-        ((TextView) dialog.findViewById(R.id.tvEnderecoNumero1)).setText((imovel.getEndereco().getNumero()));
+        ((TextView) dialog.findViewById(R.id.tvEnderecoNumero1)).setText(String.valueOf(imovel.getEndereco().getNumero()));
 
         //Locatario
         ((TextView) dialog.findViewById(R.id.tvLocatarioNome1)).setText((imovel.getLocatario().getNome()));
-        ((TextView) dialog.findViewById(R.id.tvLocatarioTelefone1)).setText((imovel.getLocatario().getTelefone()));
+        ((TextView) dialog.findViewById(R.id.tvLocatarioTelefone1)).setText(String.valueOf(imovel.getLocatario().getTelefone()));
 
         //Imovel
         ((TextView) dialog.findViewById(R.id.tvImovelDesc1)).setText((imovel.getDescricao()));
         ((TextView) dialog.findViewById(R.id.tvImovelTam1)).setText((imovel.getTamanho() + "m²"));
         ((TextView) dialog.findViewById(R.id.tvImovelAluguel1)).setText(("R$" + imovel.getValorAluguel()));
-        if(imovel.getAlugada() == 1){
+        if(imovel.getAlugada() == 0){
             ((TextView) dialog.findViewById(R.id.tvImovelAlugada1)).setText(("DISPONIVEL"));
         }else {
             ((TextView) dialog.findViewById(R.id.tvImovelAlugada1)).setText(("ALUGADA"));
