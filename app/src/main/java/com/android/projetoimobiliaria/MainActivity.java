@@ -77,10 +77,34 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-    }
+        lvImovel.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                final Imovel imovel = (Imovel) imovelAdapter.getItem(position);
 
-    private void novoAluguel() {
-        Mensagem.ExibirMensagem(this, "NovoAluguel()", TipoMensagem.ALERTA);
+                final AlertDialog.Builder alertConfirmacao = new AlertDialog.Builder(MainActivity.this);
+                alertConfirmacao.setTitle("Confirmação de Exclusão");
+                alertConfirmacao.setMessage("Deseja realmente excluir este Imovel?");
+                alertConfirmacao.setIcon(R.drawable.ic_alert);
+                alertConfirmacao.setNeutralButton("Sim", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        imovel.delete();
+                        Mensagem.ExibirMensagem(MainActivity.this,"Imovel removido!",TipoMensagem.SUCESSO);
+                    }
+                });
+                alertConfirmacao.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                loadList();
+                alertConfirmacao.show();
+
+                return true;
+            }
+        });
     }
 
     private void loadComponents() {
