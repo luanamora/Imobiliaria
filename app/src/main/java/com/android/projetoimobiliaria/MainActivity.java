@@ -29,7 +29,6 @@ import com.android.projetoimobiliaria.model.Imovel;
 import com.android.projetoimobiliaria.model.Locatario;
 import com.android.projetoimobiliaria.util.Mensagem;
 import com.android.projetoimobiliaria.util.TipoMensagem;
-import com.android.projetoimobiliaria.util.ViewDialog;
 import com.orm.SugarContext;
 
 import java.util.List;
@@ -70,8 +69,10 @@ public class MainActivity extends AppCompatActivity
                 Imovel imovel = (Imovel) imovelAdapter.getItem(position);
                 Endereco endereco = imovel.getEndereco();
 
+
                 ViewDialog dialog =  new ViewDialog();
                 dialog.showDialog(MainActivity.this,imovel);
+
 
             }
         });
@@ -148,7 +149,6 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_imovel) {
             Intent intent = new Intent(MainActivity.this, ImovelActivity.class);
-            intent.putExtra("EDICAO", 0);
             startActivity(intent);
 
         } else if (id == R.id.nav_corretor) {

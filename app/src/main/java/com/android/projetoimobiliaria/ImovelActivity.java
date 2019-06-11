@@ -94,6 +94,7 @@ public class ImovelActivity extends AppCompatActivity {
                     Mensagem.ExibirMensagem(ImovelActivity.this, "Preencha todos os campos!", TipoMensagem.ERRO);
                 }
                 limpaCampos();
+
             }
         });
 
@@ -132,7 +133,6 @@ public class ImovelActivity extends AppCompatActivity {
         etDescricao.setText("");
         tvEndereco.setText("Selecione o Endereço");
     }
-
 
 
 }

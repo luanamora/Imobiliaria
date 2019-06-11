@@ -11,7 +11,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.projetoimobiliaria.ImovelActivity;
-import com.android.projetoimobiliaria.MainActivity;
 import com.android.projetoimobiliaria.R;
 import com.android.projetoimobiliaria.model.Imovel;
 
