@@ -29,6 +29,8 @@ public class ImovelActivity extends AppCompatActivity {
     private Button btEndereco, btSalvar, btCancelar;
     private ArrayAdapter<Imovel> imovelAdapter;
     private ArrayAdapter<Corretor> corretorAdapter;
+    private int tipoTela = 0;
+    private boolean edicao = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +38,17 @@ public class ImovelActivity extends AppCompatActivity {
         setContentView(R.layout.activity_imovel);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        loadComponents();
-        loadSpinnerCorretor();
-        loadSpinnerLocatario();
-        loadEvents();
-        limpaCampos();
-
+        try {
+            tipoTela = (int) getIntent().getExtras().get("EDICAO");
+        } catch (NullPointerException nll) {
+            nll.printStackTrace();
+        } finally {
+            loadComponents();
+            loadSpinnerCorretor();
+            loadSpinnerLocatario();
+            loadEvents();
+            limpaCampos();
+        }
     }
 
     private void loadComponents() {
@@ -55,6 +62,8 @@ public class ImovelActivity extends AppCompatActivity {
         btCancelar = findViewById(R.id.btCancelar);
         etVAluguel = findViewById(R.id.etVAluguel);
         tvEndereco = findViewById(R.id.tvEndereco);
+
+
     }
 
     private void loadSpinnerCorretor() {
@@ -77,21 +86,53 @@ public class ImovelActivity extends AppCompatActivity {
         btSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (etDescricao.getText().length() > 0 && etTamanho.getText().toString().length() > 0 && etVAluguel.getText().toString().length() > 0) {
-                    Imovel imovel = new Imovel();
-                    imovel.setCodigo(Integer.parseInt(etCodigo.getText().toString()));
-                    imovel.setDescricao(etDescricao.getText().toString());
-                    imovel.setTamanho(Double.parseDouble(etTamanho.getText().toString()));
-                    imovel.setCorretor((Corretor) spCorretor.getSelectedItem());  //Provavel que essa linhda não funcionará, revisar mais tarde
-                    imovel.setLocatario((Locatario) spLocatario.getSelectedItem()); //Provavel que essa linhda não funcionará, revisar mais tarde
-                    imovel.setValorAluguel(Double.parseDouble(etVAluguel.getText().toString()));
-                    imovel.setAlugada(0);
-                    imovel.setEndereco(Endereco.last(Endereco.class));
-                    imovel.save();
-                    Mensagem.ExibirMensagem(ImovelActivity.this, "Imovel salvo com Sucesso!", TipoMensagem.SUCESSO);
-                    limpaCampos();
+                if (edicao) {
+
+                    if (etDescricao.getText().length() > 0 && etTamanho.getText().toString().length() > 0 && etVAluguel.getText().toString().length() > 0) {
+                        for (Imovel imovel : Imovel.listAll(Imovel.class)) {
+                            if (imovel.getCodigo() == tipoTela) {
+                                //imovel.setCodigo(Integer.parseInt(etCodigo.getText().toString()));
+                                imovel.setDescricao(etDescricao.getText().toString());
+                                imovel.setTamanho(Double.parseDouble(etTamanho.getText().toString()));
+                                imovel.setCorretor((Corretor) spCorretor.getSelectedItem());  //Provavel que essa linhda não funcionará, revisar mais tarde
+                                imovel.setLocatario((Locatario) spLocatario.getSelectedItem()); //Provavel que essa linhda não funcionará, revisar mais tarde
+                                imovel.setValorAluguel(Double.parseDouble(etVAluguel.getText().toString()));
+                                if(((Locatario) spLocatario.getSelectedItem()).getCodigo() == 1){
+                                    imovel.setAlugada(0);
+                                }else {
+                                    imovel.setAlugada(1);
+                                }
+                                imovel.update();
+                                tipoTela = 0;
+                                edicao = false;
+                                Mensagem.ExibirMensagem(ImovelActivity.this, "Imovel atualizado com Sucesso!", TipoMensagem.SUCESSO);
+                                limpaCampos();
+                            }
+                        }
+                    } else {
+                        Mensagem.ExibirMensagem(ImovelActivity.this, "Preencha todos os campos!", TipoMensagem.ERRO);
+                    }
                 } else {
-                    Mensagem.ExibirMensagem(ImovelActivity.this, "Preencha todos os campos!", TipoMensagem.ERRO);
+                    if (etDescricao.getText().length() > 0 && etTamanho.getText().toString().length() > 0 && etVAluguel.getText().toString().length() > 0) {
+                        Imovel imovel = new Imovel();
+                        imovel.setCodigo(Integer.parseInt(etCodigo.getText().toString()));
+                        imovel.setDescricao(etDescricao.getText().toString());
+                        imovel.setTamanho(Double.parseDouble(etTamanho.getText().toString()));
+                        imovel.setCorretor((Corretor) spCorretor.getSelectedItem());  //Provavel que essa linhda não funcionará, revisar mais tarde
+                        imovel.setLocatario((Locatario) spLocatario.getSelectedItem()); //Provavel que essa linhda não funcionará, revisar mais tarde
+                        imovel.setValorAluguel(Double.parseDouble(etVAluguel.getText().toString()));
+                        if(((Locatario) spLocatario.getSelectedItem()).getCodigo() == 1){
+                            imovel.setAlugada(0);
+                        }else {
+                            imovel.setAlugada(1);
+                        }
+                        imovel.setEndereco(Endereco.last(Endereco.class));
+                        imovel.save();
+                        Mensagem.ExibirMensagem(ImovelActivity.this, "Imovel salvo com Sucesso!", TipoMensagem.SUCESSO);
+                        limpaCampos();
+                    } else {
+                        Mensagem.ExibirMensagem(ImovelActivity.this, "Preencha todos os campos!", TipoMensagem.ERRO);
+                    }
                 }
                 limpaCampos();
             }
@@ -121,16 +162,32 @@ public class ImovelActivity extends AppCompatActivity {
 
 
     private void limpaCampos() {
-        Imovel last = Imovel.last(Imovel.class);
-        if (last != null) {
-            etCodigo.setText(String.valueOf(last.getCodigo() + 1));
+        if (tipoTela != 0) {
+            for (Imovel imovel : Imovel.listAll(Imovel.class)) {
+                if (imovel.getCodigo() == tipoTela) {
+                    btSalvar.setText("Atualizar");
+                    edicao = true;
+                    etCodigo.setText(String.valueOf(imovel.getCodigo()));
+                    etDescricao.setText(imovel.getDescricao());
+                    etTamanho.setText(String.valueOf(imovel.getTamanho()));
+                    etVAluguel.setText(String.valueOf(imovel.getValorAluguel()));
+                    tvEndereco.setText(String.valueOf(imovel.getEndereco().toStringAdapter()));
+                }
+            }
         } else {
-            etCodigo.setText("1");
+            Imovel last = Imovel.last(Imovel.class);
+            if (last != null) {
+                etCodigo.setText(String.valueOf(last.getCodigo() + 1));
+            } else {
+                etCodigo.setText("1");
+            }
+            etVAluguel.setText("");
+            etTamanho.setText("");
+            etDescricao.setText("");
+            tvEndereco.setText("Selecione o Endereço");
         }
-        etVAluguel.setText("");
-        etTamanho.setText("");
-        etDescricao.setText("");
-        tvEndereco.setText("Selecione o Endereço");
+
+
     }
 
 }

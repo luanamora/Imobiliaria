@@ -16,7 +16,7 @@ import com.android.projetoimobiliaria.R;
 import com.android.projetoimobiliaria.model.Imovel;
 
 public class ViewDialog {
-    public void showDialog(final Activity activity, Imovel imovel){
+    public void showDialog(final Activity activity, final Imovel imovel){
         final Dialog dialog = new Dialog(activity);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); //criar layout
         dialog.setContentView(R.layout.item_dialog);
@@ -31,7 +31,7 @@ public class ViewDialog {
         ((TextView) dialog.findViewById(R.id.tvEnderecoCEP1)).setText((imovel.getEndereco().getCep()));
         ((TextView) dialog.findViewById(R.id.tvEnderecoEstado1)).setText((imovel.getEndereco().getEstado()));
         ((TextView) dialog.findViewById(R.id.tvEnderecoMunicipio1)).setText((imovel.getEndereco().getCidade()));
-        ((TextView) dialog.findViewById(R.id.tvEnderecoRua1)).setText((imovel.getEndereco().getCidade()));
+        ((TextView) dialog.findViewById(R.id.tvEnderecoRua1)).setText((imovel.getEndereco().getRua()));
         ((TextView) dialog.findViewById(R.id.tvEnderecoNumero1)).setText(String.valueOf(imovel.getEndereco().getNumero()));
 
         //Locatario
@@ -61,7 +61,7 @@ public class ViewDialog {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent( activity, ImovelActivity.class);
-                intent.putExtra("EDICAO", 1);
+                intent.putExtra("EDICAO", imovel.getCodigo());
                 activity.startActivity(intent);
                 //startActivity(intent);
             }
