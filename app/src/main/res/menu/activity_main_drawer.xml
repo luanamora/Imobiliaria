@@ -5,6 +5,7 @@
 
     <group android:checkableBehavior="single">
         <item
+<<<<<<< HEAD
             android:id="@+id/nav_cadastro_imovel"
             android:icon="@drawable/ic_house"
             android:title="@string/lbCadastroImovel" />
@@ -16,6 +17,19 @@
             android:id="@+id/nav_cadastro_corretor"
             android:icon="@drawable/ic_add_person_2"
             android:title="@string/lbCadastroLocatario" />
+=======
+            android:id="@+id/nav_imovel"
+            android:icon="@drawable/ic_house"
+            android:title="@string/menu_imovel" />
+        <item
+            android:id="@+id/nav_corretor"
+            android:icon="@drawable/ic_add_person"
+            android:title="@string/menu_corretor" />
+        <item
+            android:id="@+id/nav_locatario"
+            android:icon="@drawable/ic_add_person_2"
+            android:title="@string/menu_locatario" />
+>>>>>>> 644556376731011d901a33232be7018d92706d34
         <item
             android:id="@+id/nav_tools"
             android:icon="@drawable/ic_menu_manage"
@@ -29,9 +43,9 @@
                 android:icon="@drawable/ic_menu_share"
                 android:title="@string/menu_share" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_remove"
                 android:icon="@drawable/ic_menu_send"
-                android:title="@string/menu_send" />
+                android:title="@string/menu_remove" />
         </menu>
     </item>
 
